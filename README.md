@@ -16,6 +16,48 @@ A multinational company **TalentCore Pvt. Ltd.** is experiencing rising employee
 
 ---
 
+## How to Run
+
+### Prerequisites
+- Python 3.8+
+- Git
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Siyalkamble/Employee-Turnover.git
+   cd Employee-Turnover
+   ```
+
+2. **Create a virtual environment (recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Launch Jupyter Notebook:**
+   ```bash
+   jupyter notebook Logistic_Regression.ipynb
+   ```
+
+5. **Run the analysis:**
+   - Open the notebook in your browser
+   - Execute cells sequentially (Shift+Enter) or run all (Cell → Run All)
+   - The notebook will load `employee_turnover.csv`, train three Logistic Regression models (Baseline, L1, L2), and display performance comparisons
+
+### Expected Output
+- Train/Test split: 1080 / 270 samples
+- Model performance metrics, confusion matrices, and ROC-AUC scores
+- Feature coefficients and importance rankings
+- Comparison table showing L2 (Ridge) achieves the best accuracy (88.5%) and ROC-AUC (0.9582)
+
+
 ## Dataset Overview
 
 - **Rows:** 1350 | **Columns:** 16 (15 features + 1 target)
@@ -56,7 +98,7 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
                               f1_score, roc_auc_score, classification_report,
                               ConfusionMatrixDisplay)
 
-df = pd.read_csv('your_file.csv')  # update path
+df = pd.read_csv('employee_turnover.csv')
 print(df.shape)
 print(df.dtypes)
 print(df.isnull().sum())
